@@ -1,0 +1,53 @@
+/* Estilos para el cuerpo del documento */
+body {
+  display: flex; /* Utiliza un modelo de diseño flexible */
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  align-items: center; /* Centra verticalmente los elementos hijos */
+  height: 100vh; /* Establece la altura al 100% de la ventana visible */
+  margin: 0; /* Elimina los márgenes por defecto */
+  background-color: black; /* Establece el color de fondo en negro */
+}
+
+/* Estilos para el elemento con la clase "tooltip" */
+.tooltip {
+  position: relative; /* Posición relativa para posicionar los elementos hijos */
+  display: inline-block; /* Se comporta como bloque pero se alinea como línea */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
+  padding: 8px 16px; /* Relleno interno en forma de caja */
+  background: linear-gradient(to bottom, #3498db, #2980b9); /* Fondo con gradiente lineal de azul a azul más oscuro */
+  color: #fff; /* Color de texto en blanco */
+  border-radius: 25px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  transition: background 0.3s ease-in-out; /* Transición suave en el cambio de fondo */
+}
+
+/* Estilos al pasar el cursor sobre el elemento con la clase "tooltip" */
+.tooltip:hover {
+  background: linear-gradient(to bottom, #2980b9, #3498db); /* Invierte el gradiente al pasar el cursor */
+}
+
+/* Estilos para el contenido del tooltip */
+.tooltip-content {
+  position: absolute; /* Posición absoluta para despegar del flujo normal */
+  bottom: 150%; /* Coloca el tooltip por encima del elemento padre */
+  left: 50%; /* Centra horizontalmente el tooltip */
+  transform: translateX(-50%); /* Ajusta el centro del tooltip */
+  padding: 10px; /* Relleno interno en forma de caja */
+  background: linear-gradient(to bottom, #2980b9, #3498db); /* Fondo con gradiente lineal de azul a azul más oscuro */
+  color: #fff; /* Color de texto en blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  visibility: hidden; /* Inicialmente oculta el contenido del tooltip */
+  opacity: 0; /* Inicialmente completamente transparente */
+  width: 200px; /* Ancho del tooltip */
+  text-align: center; /* Alineación del texto al centro */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  z-index: 1; /* Eleva el tooltip por encima de otros elementos */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición para la visibilidad y opacidad */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra alrededor del tooltip */
+}
+
+/* Estilos al pasar el cursor sobre el elemento con la clase "tooltip", mostrando el contenido del tooltip */
+.tooltip:hover .tooltip-content {
+  visibility: visible; /* Hace el contenido del tooltip visible */
+  opacity: 1; /* Hace el contenido del tooltip completamente visible */
+}
